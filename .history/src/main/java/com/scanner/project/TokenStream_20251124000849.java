@@ -240,7 +240,7 @@ public class TokenStream {
 
 	private boolean isKeyword(String s) {
 		// TODO TO BE COMPLETED 
-		return(s.equals("bool") || s.equals("else") || s.equals("if") || s.equals("integer") || s.equals("main") || s.equals("while"));
+		return false;
 	}
 
 	private boolean isWhiteSpace(char c) {
@@ -264,13 +264,13 @@ public class TokenStream {
 
 	private boolean isSeparator(char c) {
 		// TODO TO BE COMPLETED
-		return (c == '(' || c == ')' || c == '{' || c == '}' || c == ';' || c == ',');
+		return false;
 	}
 
 	private boolean isOperator(char c) {
 		// Checks for characters that start operators
 		// TODO TO BE COMPLETED
-		return (c == '+' || c == '-' || c == '*' || c == '/' || c == '<' || c == '>' || c == '=' || c == '!' || c == '&' || c == '|' || c == ':');
+		return false;
 	}
 
 	private boolean isLetter(char c) {
@@ -279,7 +279,7 @@ public class TokenStream {
 
 	private boolean isDigit(char c) {
 		// TODO TO BE COMPLETED
-		return (c >= '0' && c <= '9');
+		return false;
 	}
 
 	public boolean isEndofFile() {

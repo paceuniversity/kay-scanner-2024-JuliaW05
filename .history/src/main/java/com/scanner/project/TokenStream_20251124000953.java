@@ -270,7 +270,7 @@ public class TokenStream {
 	private boolean isOperator(char c) {
 		// Checks for characters that start operators
 		// TODO TO BE COMPLETED
-		return (c == '+' || c == '-' || c == '*' || c == '/' || c == '<' || c == '>' || c == '=' || c == '!' || c == '&' || c == '|' || c == ':');
+		return false;
 	}
 
 	private boolean isLetter(char c) {
@@ -279,7 +279,7 @@ public class TokenStream {
 
 	private boolean isDigit(char c) {
 		// TODO TO BE COMPLETED
-		return (c >= '0' && c <= '9');
+		return false;
 	}
 
 	public boolean isEndofFile() {
