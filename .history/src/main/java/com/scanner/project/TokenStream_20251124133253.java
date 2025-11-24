@@ -1,6 +1,5 @@
 package com.scanner.project;
 
-//Julia Walkuska
 
 // TokenStream.java
 
