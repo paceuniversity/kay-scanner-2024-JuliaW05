@@ -66,7 +66,7 @@ public class TokenStream {
 				if (!isEoFile()) {
 					nextChar = readChar();
 				}
-				skipWhiteSpace();
+				skipWhite
 
 			} else {
 				// A slash followed by anything else must be an operator.
@@ -91,7 +91,6 @@ public class TokenStream {
 					nextChar = readChar();
 					return t;
 				}
-				skipWhiteSpace();
 				return t;
 			case '>':
 				// >=
@@ -101,7 +100,6 @@ public class TokenStream {
 					nextChar = readChar();
 					return t;
 				}
-				skipWhiteSpace();
 				return t;
 			case ':':
 				// :=
@@ -111,9 +109,8 @@ public class TokenStream {
 					nextChar = readChar();
 					return t;
 				} else {
-					t.setType("Other");
+					t.setType("Separator");
 				}
-				skipWhiteSpace();
 				return t;
 			case '=':
 				//Look for ==
@@ -125,7 +122,7 @@ public class TokenStream {
 				} else {
 					t.setType("Other");
 				}
-				skipWhiteSpace();
+
 				return t;
 			case '!':
 				// !=
@@ -135,7 +132,6 @@ public class TokenStream {
 					nextChar = readChar();
 					return t;
 				} 
-				skipWhiteSpace();
 				return t;
 			case '|':
 				// Look for ||
@@ -147,8 +143,8 @@ public class TokenStream {
 				} else {
 					t.setType("Other");
 				}
-				skipWhiteSpace();
 				return t;
+
 			case '&':
 				// Look or &&
 				nextChar = readChar();
@@ -159,12 +155,11 @@ public class TokenStream {
 				} else {
 					t.setType("Other");
 				}
-				skipWhiteSpace();
+
 				return t;
 
 			default: // all other operators
 				nextChar = readChar();
-				skipWhiteSpace();
 				return t;
 			}
 		}
@@ -188,7 +183,7 @@ public class TokenStream {
 			// now see if this is a keyword
 			if (isKeyword(t.getValue())) {
 				t.setType("Keyword");
-			} else if (t.getValue().equals("True") || t.getValue().equals("False")) {
+			} else if (t.getValue().equals("true") || t.getValue().equals("false")) {
 				t.setType("Literal");
 			}
 			if (isEndOfToken(nextChar)) { // If token is valid, returns.

@@ -111,7 +111,7 @@ public class TokenStream {
 					nextChar = readChar();
 					return t;
 				} else {
-					t.setType("Other");
+					t.setType("Separator");
 				}
 				skipWhiteSpace();
 				return t;
@@ -188,7 +188,7 @@ public class TokenStream {
 			// now see if this is a keyword
 			if (isKeyword(t.getValue())) {
 				t.setType("Keyword");
-			} else if (t.getValue().equals("True") || t.getValue().equals("False")) {
+			} else if (t.getValue().equals("True") || t.getValue().equals("false")) {
 				t.setType("Literal");
 			}
 			if (isEndOfToken(nextChar)) { // If token is valid, returns.

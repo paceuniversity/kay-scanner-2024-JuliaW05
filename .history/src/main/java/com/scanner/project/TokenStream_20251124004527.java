@@ -110,9 +110,6 @@ public class TokenStream {
 					t.setValue(t.getValue() + nextChar);
 					nextChar = readChar();
 					return t;
-				} else {
-					t.setType("Other");
-				}
 				skipWhiteSpace();
 				return t;
 			case '=':
@@ -226,6 +223,7 @@ public class TokenStream {
 
 		return t;
 	}
+}
 
 	private char readChar() {
 		int i = 0;

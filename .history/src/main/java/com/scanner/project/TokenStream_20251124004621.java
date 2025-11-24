@@ -111,7 +111,7 @@ public class TokenStream {
 					nextChar = readChar();
 					return t;
 				} else {
-					t.setType("Other");
+					t.setType("Other")
 				}
 				skipWhiteSpace();
 				return t;
